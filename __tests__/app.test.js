@@ -4,8 +4,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 const { books } = require('../lib/books-data');
-// const request = require('supertest');
-// const app = require('../lib/app');
+
 
 describe('backend-express-template routes', () => {
   beforeEach(() => {
