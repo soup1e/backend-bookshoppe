@@ -4,6 +4,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 const { books } = require('../lib/books-data');
+const { authors } = require('../lib/author-data.js');
 
 describe('backend-express-template routes', () => {
   beforeEach(() => {
@@ -39,7 +40,7 @@ describe('backend-express-template routes', () => {
 
   it('/authors should return a list of authors', async () => {
     const res = await request(app).get('/authors');
-    const expected = books.map(({ id, name, dob, pob }) => ({
+    const expected = authors.map(({ id, name, dob, pob }) => ({
       id,
       name,
       dob,
