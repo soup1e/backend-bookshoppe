@@ -47,6 +47,24 @@ describe('backend-express-template routes', () => {
     }));
     expect(res.body).toEqual(expected);
   });
+
+  it('/id should return a single author', async () => {
+    const res = await request(app).get('/authors/1');
+    const expected = {
+      id: '1',
+      name: 'Jeff Kinney',
+      dob: 'February 19, 1971',
+      pob: 'Fort Washington, Maryland',
+      books: [
+        {
+          id: '1',
+          title: 'Diary of a Wimpy Kid',
+          released: '2010',
+        },
+      ],
+    };
+    expect(res.body).toEqual(expected);
+  });
   afterAll(() => {
     pool.end();
   });
