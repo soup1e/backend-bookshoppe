@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS authors;
 CREATE TABLE books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     title VARCHAR,
-    released VARCHAR
+    released BIGINT
 );
 
 INSERT INTO
