@@ -57,9 +57,9 @@ describe('backend-express-template routes', () => {
       pob: 'Fort Washington, Maryland',
       books: [
         {
-          id: '1',
+          id: 1,
           title: 'Diary of a Wimpy Kid',
-          released: '2010',
+          released: 2010,
         },
       ],
     };
