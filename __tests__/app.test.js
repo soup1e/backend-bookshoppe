@@ -36,6 +36,17 @@ describe('backend-express-template routes', () => {
     };
     expect(res.body).toEqual(expected);
   });
+
+  it('/authors should return a list of authors', async () => {
+    const res = await request(app).get('/authors');
+    const expected = books.map(({ id, name, dob, pob }) => ({
+      id,
+      name,
+      dob,
+      pob,
+    }));
+    expect(res.body).toEqual(expected);
+  });
   afterAll(() => {
     pool.end();
   });
